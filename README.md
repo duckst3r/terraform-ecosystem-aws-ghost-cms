@@ -1,0 +1,1 @@
+# terraform-ecosystem-aws-ghost-cms
