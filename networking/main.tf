@@ -1,5 +1,11 @@
-resource "null_resource" "hello_ghost" {
-  provisioner "local-exec" {
-    command = "echo \"Hello Ghost!\""
-  }
+resource "aws_vpc" "this" {
+  cidr_block       = var.vpc_cidr
+  instance_tenancy = "default"
+
+  tags = merge(
+    {
+      Name = local.vpc_name
+    },
+    var.tags
+  )
 }
