@@ -4,8 +4,8 @@ variable "prefix" {
 }
 
 variable "tags" {
-  type    = map(string)
   default = null
+  type    = map(string)
 }
 
 #####
