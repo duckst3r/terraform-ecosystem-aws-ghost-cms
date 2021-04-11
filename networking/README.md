@@ -31,9 +31,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_enable_ha"></a> [enable\_ha](#input\_enable\_ha) | Choose whether to activate high availability or not. | `bool` | `false` | no |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | A prefix for each resource of the networking module. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | `null` | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The VPC CIDR block for the Ghost CMS deployment. | `string` | `"192.168.194.0/23"` | no |
 
 ## Outputs
 

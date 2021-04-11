@@ -1,3 +1,9 @@
+variable "enable_ha" {
+  description = "Choose whether to activate high availability or not."
+  default     = false
+  type        = bool
+}
+
 variable "prefix" {
   description = "A prefix for each resource of the networking module."
   type        = string
@@ -6,14 +12,4 @@ variable "prefix" {
 variable "tags" {
   default = null
   type    = map(string)
-}
-
-#####
-# VPC
-#####
-
-variable "vpc_cidr" {
-  default     = "192.168.194.0/23"
-  description = "The VPC CIDR block for the Ghost CMS deployment."
-  type        = string
 }
