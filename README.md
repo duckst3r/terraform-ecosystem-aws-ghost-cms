@@ -12,21 +12,30 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.0 |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_networking"></a> [networking](#module\_networking) | ./networking |  |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [null_resource.hello_ghost](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_enable_ha"></a> [enable\_ha](#input\_enable\_ha) | Choose whether to activate high availability or not. | `bool` | `false` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | The environment name for deployment. | `string` | `"production"` | no |
+| <a name="input_project"></a> [project](#input\_project) | The project name. | `string` | `"ghost"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | `null` | no |
 
 ## Outputs
 
