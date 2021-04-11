@@ -76,3 +76,28 @@ output "vpc_tags_all" {
   description = "A map of tags assigned to the resource, including those inherited from the provider default_tags configuration block."
   value       = aws_vpc.this.tags_all
 }
+
+
+#####
+# Subnets
+#####
+
+output "vpc_public_subnet_ids" {
+  description = "The list if public subnet IDs."
+  value       = aws_subnet.this_public.*.id
+}
+
+output "vpc_public_subnet_arns" {
+  description = "The list if public subnet ARNs."
+  value       = aws_subnet.this_public.*.arn
+}
+
+output "vpc_private_subnet_ids" {
+  description = "The list if private subnet IDs."
+  value       = aws_subnet.this_private.*.id
+}
+
+output "vpc_private_subnet_arns" {
+  description = "The list if private subnet ARNs."
+  value       = aws_subnet.this_private.*.arn
+}
