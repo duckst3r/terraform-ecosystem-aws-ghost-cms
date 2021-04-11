@@ -33,7 +33,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_enable_ha"></a> [enable\_ha](#input\_enable\_ha) | Choose whether to activate high availability or not. | `bool` | `false` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | A prefix for each resource of the networking module. | `string` | n/a | yes |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | A prefix for each resource of the ecs module. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | `null` | no |
 
 ## Outputs

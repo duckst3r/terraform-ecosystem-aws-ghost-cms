@@ -5,7 +5,7 @@ variable "enable_ha" {
 }
 
 variable "prefix" {
-  description = "A prefix for each resource of the networking module."
+  description = "A prefix for each resource of the ecs module."
   type        = string
 }
 
