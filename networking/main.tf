@@ -48,3 +48,19 @@ resource "aws_subnet" "this_private" {
     var.tags
   )
 }
+
+
+#####
+# Internet Gateway
+#####
+
+resource "aws_internet_gateway" "this" {
+  vpc_id = aws_vpc.this.id
+
+  tags = merge(
+    {
+      Name = local.igw_name
+    },
+    var.tags
+  )
+}

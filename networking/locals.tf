@@ -3,4 +3,5 @@ locals {
   vpc_cidr            = "192.168.194.0/23"
   subnet_public_name  = "${var.prefix}-subnet-public"
   subnet_private_name = "${var.prefix}-subnet-private"
+  igw_name            = "${var.prefix}-igw"
 }
