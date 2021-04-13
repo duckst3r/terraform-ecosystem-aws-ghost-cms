@@ -34,7 +34,7 @@
 |------|-------------|------|---------|:--------:|
 | <a name="input_access_key"></a> [access\_key](#input\_access\_key) | n/a | `any` | n/a | yes |
 | <a name="input_enable_ha"></a> [enable\_ha](#input\_enable\_ha) | Choose whether to activate high availability or not. | `bool` | `false` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | The environment name for deployment. | `string` | `"production"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | The environment name for deployment. | `string` | `"dev"` | no |
 | <a name="input_project"></a> [project](#input\_project) | The project name. | `string` | `"ghost"` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `any` | n/a | yes |
 | <a name="input_secret_key"></a> [secret\_key](#input\_secret\_key) | n/a | `any` | n/a | yes |
