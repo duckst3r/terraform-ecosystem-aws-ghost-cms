@@ -18,6 +18,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_asg"></a> [asg](#module\_asg) | ./asg |  |
 | <a name="module_networking"></a> [networking](#module\_networking) | ./networking |  |
 
 ## Resources
