@@ -100,3 +100,48 @@ EOF
     create_before_destroy = true
   }
 }
+
+
+#####
+# Autoscaling Group
+#####
+
+resource "aws_autoscaling_group" "this" {
+  name = local.asg_name
+
+  desired_capacity = 1
+  max_size         = 1
+  min_size         = 1
+
+  launch_configuration = aws_launch_configuration.this.id
+  termination_policies = ["OldestLaunchConfiguration", "Default"]
+  vpc_zone_identifier  = var.public_subnet_ids
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  tag {
+    key                 = "Cluster"
+    value               = var.ecs_cluster_name
+    propagate_at_launch = true
+  }
+
+  tag {
+    key                 = "Environment"
+    value               = var.environment
+    propagate_at_launch = true
+  }
+
+  tag {
+    key                 = "Managed-by"
+    value               = "Terraform"
+    propagate_at_launch = true
+  }
+
+  tag {
+    key                 = "Name"
+    value               = local.asg_name
+    propagate_at_launch = true
+  }
+}
