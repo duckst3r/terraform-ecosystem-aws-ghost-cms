@@ -28,3 +28,34 @@ resource "aws_iam_instance_profile" "this" {
   path = "/"
   role = aws_iam_role.this.name
 }
+
+
+#####
+# Security Group
+#####
+
+resource "aws_security_group" "this" {
+  name   = local.security_group_name
+  vpc_id = var.vpc_id
+
+  ingress {
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 2368
+    protocol    = "tcp"
+    to_port     = 2368
+  }
+
+  egress {
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 0
+    protocol    = "-1"
+    to_port     = 0
+  }
+
+  tags = merge(
+    {
+      Name = local.security_group_name
+    },
+    var.tags
+  )
+}
