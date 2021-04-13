@@ -59,3 +59,44 @@ resource "aws_security_group" "this" {
     var.tags
   )
 }
+
+
+#####
+# Launch Configuration
+#####
+
+resource "aws_launch_configuration" "this" {
+  name_prefix = var.prefix
+
+  associate_public_ip_address = true
+  iam_instance_profile        = aws_iam_instance_profile.this.name
+  image_id                    = var.image_id
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  security_groups             = [aws_security_group.this.id]
+
+  user_data = <<EOF
+#!/bin/bash
+
+# The cluster this agent should check into.
+echo 'ECS_CLUSTER=${var.ecs_cluster_name}' >> /etc/ecs/ecs.config
+
+# Disable privileged containers.
+echo 'ECS_DISABLE_PRIVILEGED=true' >> /etc/ecs/ecs.config
+EOF
+
+  root_block_device {
+    volume_type = "standard"
+  }
+
+  ebs_block_device {
+    device_name = "/dev/xvdcz"
+    encrypted   = true
+    volume_size = 10
+    volume_type = "standard"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
